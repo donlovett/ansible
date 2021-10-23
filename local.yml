@@ -1,7 +1,8 @@
 - hosts: localhost
   gather_facts: yes
   tasks:
-    - debug: var=hostvars[inventory_hostname]['ansible_default_ipv4']['address']
+    - debug: var=ansible_all_ipv4_addresses
+    - debug: var=ansible_default_ipv4.address
 become: true
   tasks:
   - name: Install packages
