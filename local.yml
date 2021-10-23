@@ -6,9 +6,27 @@
     with_items:
       - htop
       - ssh
-  - name: Gather the package facts
-    ansible.builtin.package_facts:
-      manager: auto
-  - name: Print the package facts
-    ansible.builtin.debug:
-      var: ansible_facts.packages
+  - name: Enable Root Login
+     lineinfile:
+           dest: /etc/ssh/sshd_config
+           regexp: '^PermitRootLogin'
+           line: "PermitRootLogin yes"
+           state: present
+           backup: yes
+     notify:
+       - restart ssh
+
+   handlers:
+   - name: restart ssh
+     service:
+       name: sshd
+       state: restarted
+
+
+
+#  - name: Gather the package facts
+#    ansible.builtin.package_facts:
+#      manager: auto
+#  - name: Print the package facts
+#    ansible.builtin.debug:
+#      var: ansible_facts.packages
