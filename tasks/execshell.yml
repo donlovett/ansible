@@ -1,0 +1,2 @@
+- name: Install python-psutil package
+  apt: name=python-psutil
