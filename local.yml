@@ -1,5 +1,8 @@
 - hosts: localhost
-  become: true
+  gather_facts: yes
+  tasks:
+    - debug: var=hostvars[inventory_hostname]['ansible_env'].SSH_CONNECTION.split(' ')[2]
+become: true
   tasks:
   - name: Install packages
     apt: name={{item}}
