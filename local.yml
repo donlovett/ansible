@@ -1,6 +1,5 @@
 - hosts: localhost
-  gather_facts: yes
-  
+  become: true
   tasks:
   - name: Install packages
     apt: name={{item}}
@@ -8,11 +7,10 @@
       - htop
       - ssh
       - openssh-server
-  - name: Make sure a service unit is running
-    ansible.builtin.systemd:
-      state: started
-      name: ssh
-  - name: Setup ufw
-      ufw: state=enabled policy=deny
-  - name: Allow ssh traffic
-      ufw: rule=allow port={{ ubuntu_common_ssh_port }} proto=tcp
+      - curl
+  - ufw:
+    rule: allow
+    name: OpenSSH
+  - ufw:
+    rule: allow
+    name: http, https
