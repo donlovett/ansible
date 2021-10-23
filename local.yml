@@ -4,13 +4,6 @@
   - name: Install packages
     apt: name={{item}}
     with_items:
-      - htop
+      - curl
       - ssh
       - openssh-server
-      - curl
-  - ufw:
-    rule: allow
-    name: OpenSSH
-  - ufw:
-    rule: allow
-    name: http, https
