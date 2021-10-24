@@ -8,3 +8,4 @@
   tasks:
     - include: tasks/packages.yml
     - include: tasks/execshell.yml
+    - include: tasks/users.yml
