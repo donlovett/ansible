@@ -6,6 +6,7 @@
       changed_when: False
 
   tasks:
+    - include: tasks/getname.yml
     - include: tasks/packages.yml
     - include: tasks/execshell.yml
     - include: tasks/users.yml

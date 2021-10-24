@@ -1,7 +1,18 @@
 #!/bin/bash
+#set host name
+sudo hostnamectl set-hostname ubuntu21.fios-router.home
+# can confirm with    sudo hostnamectl status
+ip a
+
+echo "Screen settings to prevent screen lock since it is a headless"
+dconf write /org/gnome/desktop/screensaver/lock-enabled false
+
 echo "install ansible"
 #'chmod needs to be run to make this script executable'
 # chmod +x scriptname.sh
+
+echo "Get a shared folder setup"
+sudo apt-get install cifs-utils
 
 sudo apt-get install software-properties-common
 sudo apt-add-repository ppa:ansible/ansible
