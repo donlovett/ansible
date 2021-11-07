@@ -3,5 +3,6 @@
   with_items:
     - curl
     - ssh
+    - tree
     - openssh-server
     - open-vm-tools
