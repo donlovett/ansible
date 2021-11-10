@@ -1,6 +1,6 @@
 #!/bin/bash
 #set host name
-sudo hostnamectl set-hostname ubuntu21.fios-router.home
+sudo hostnamectl set-hostname ubuntu20tst.fios-router.home
 # can confirm with    sudo hostnamectl status
 ip a
 

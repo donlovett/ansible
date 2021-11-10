@@ -1,7 +1,8 @@
-- name: get the operators name 
-  pause: 
-    prompt: "Please enter your name" 
-  register: opname 
+---
+# - name: get the operators name 
+#  pause: 
+#    prompt: "Please enter your name" 
+#  register: opname 
 
 - name: tell us which host we are on
   debug:

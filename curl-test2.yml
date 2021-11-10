@@ -1,0 +1,17 @@
+---
+  # Always available
+- hosts: localhost
+  # Execute commands directly instead of over SSH
+  connection: local
+  # Tasks: now what to do in this play
+  tasks:
+    # Ansible prints this name when running the playbook
+    - name: Install curl
+      # Now declare the module for this play. The "module" defines
+      # what to do.
+      apt:
+        state: present # This package should be installed
+        name: curl
+        # cache_valid_time: 18000 # 5 hours in seconds
+      # Use sudo
+      become: yes

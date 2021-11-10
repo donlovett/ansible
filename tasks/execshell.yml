@@ -1,3 +1,3 @@
 - name: Copy runfirst scripts file
-  copy: src=/home/don/runfirst.sh dest=/home/don/ansible/runfirst.sh
+  copy: src=/home/don/runfirst.sh dest=/home/don/runfirst.sh
 

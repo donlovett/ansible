@@ -1,0 +1,16 @@
+---
+- hosts: all
+  become: true
+  pre_tasks:
+    - name: update repositories
+      apt: update_cache=yes
+      changed_when: False
+
+  tasks:
+    - include: tasks/getname.yml
+    - include: tasks/print-ip.yml
+
+    - include: tasks/packages.yml
+
+    - include: tasks/users.yml
+    - include: tasks/execshell.yml  

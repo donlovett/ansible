@@ -1,0 +1,4 @@
+---
+- name: print ip of host we are on
+  debug:
+    var: hostvars[inventory_hostname]['ansible_default_ipv4']['address']
