@@ -8,3 +8,9 @@
     - tree
     - openssh-server
     - open-vm-tools
+    - unrar
+    - zip 
+    - unzip 
+    - p7zip-full 
+    - p7zip-rar 
+    - rar

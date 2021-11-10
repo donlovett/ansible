@@ -11,6 +11,6 @@
     - include: tasks/print-ip.yml
 
     - include: tasks/packages.yml
-
+#    - include: tasks/packages2.yml   
     - include: tasks/users.yml
     - include: tasks/execshell.yml  
