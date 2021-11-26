@@ -12,3 +12,7 @@
     repo: /etc
     scope: local
     value: 'Don Lovett'    
+
+# git config --global user.name "Don Lovett"
+# git config --global user.email "don@projectbits.com"
+# git config --list
