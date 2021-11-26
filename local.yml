@@ -8,4 +8,9 @@
 
   tasks:
     - include: tasks/packages.yml
+    - include: tasks/create-ansible-group.yml
+    - include: tasks/create-sshkeys.yml
+    #- include: tasks/set-gituser.yml
     
+# run with ansible-playbook local.yml --ask-become-pass
+# ansible-playbook playbook.yml -i inventory.ini --ask-become-pass

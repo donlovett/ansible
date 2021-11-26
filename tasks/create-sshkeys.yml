@@ -1,0 +1,16 @@
+- name: Create a .ssh directory if it does not exist
+  ansible.builtin.file:
+    path: /home/don/.ssh
+    state: directory
+    mode: '0755'
+
+# must have this installed ansible-galaxy collection install community.general
+- name: Install collection community.network
+  community.general.ansible_galaxy_install:
+    type: collection
+    name: community.crypto
+
+- name: Generate an OpenSSH keypair with the default values (4096 bits, rsa)
+  community.crypto.openssh_keypair:
+    path: /home/don/.ssh/id_rsa
+    size: 4096

@@ -1,0 +1,14 @@
+---
+- name: Add User Name to Git
+  community.general.git_config:
+    name: user.email
+    repo: /etc
+    scope: local
+    value: 'don@projectbits.com'
+
+- name: Add User Name to Git
+  community.general.git_config:
+    name: user.name
+    repo: /etc
+    scope: local
+    value: 'Don Lovett'    
